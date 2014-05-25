@@ -1,4 +1,4 @@
-package com.swookiee.devcon.demo.swagger;
+package com.swookiee.demo.swagger;
 
 import com.wordnik.swagger.annotations.Api;
 import com.wordnik.swagger.annotations.ApiOperation;

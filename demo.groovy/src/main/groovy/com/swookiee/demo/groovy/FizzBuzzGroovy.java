@@ -1,4 +1,4 @@
-package com.swookiee.devcon.demo.groovy;
+package com.swookiee.demo.groovy;
 
 import java.util.List;
 import javax.ws.rs.GET;

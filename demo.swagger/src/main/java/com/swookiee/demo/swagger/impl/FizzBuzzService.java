@@ -1,6 +1,6 @@
-package com.swookiee.devcon.demo.swagger.impl;
+package com.swookiee.demo.swagger.impl;
 
-import com.swookiee.devcon.demo.swagger.FizzBuzz;
+import com.swookiee.demo.swagger.FizzBuzz;
 import java.util.ArrayList;
 import java.util.List;
 import javax.ws.rs.WebApplicationException;

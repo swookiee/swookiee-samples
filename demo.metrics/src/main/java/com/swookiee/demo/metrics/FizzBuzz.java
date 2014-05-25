@@ -1,4 +1,4 @@
-package com.swookiee.devcon.demo.metrics;
+package com.swookiee.demo.metrics;
 
 import java.util.List;
 import javax.ws.rs.GET;

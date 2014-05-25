@@ -1,4 +1,4 @@
-package com.swookiee.sample.configuration;
+package com.swookiee.demo.configuration;
 
 import com.swookiee.runtime.metrics.configuration.GraphiteReporterConfiguration;
 

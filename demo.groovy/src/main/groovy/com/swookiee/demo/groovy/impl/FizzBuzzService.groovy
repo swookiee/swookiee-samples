@@ -1,6 +1,6 @@
-package com.swookiee.devcon.demo.groovy
+package com.swookiee.demo.groovy
 
-import com.swookiee.devcon.demo.groovy.FizzBuzzGroovy
+import com.swookiee.demo.groovy.FizzBuzzGroovy
 import java.util.ArrayList
 import java.util.List
 import javax.ws.rs.Path
