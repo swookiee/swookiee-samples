@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>com.swookiee</groupId>
+        <artifactId>com.swookiee.demo.parent</artifactId>
+        <version>1.0.0-SNAPSHOT</version>
+    </parent>
+
+    <properties>
+        <build.helper.maven.plugin.version>1.8</build.helper.maven.plugin.version>
+        <groovy.eclipse.compiler.version>2.8.0-01</groovy.eclipse.compiler.version>
+        <groovy.eclipse.batch.version>2.1.8-01</groovy.eclipse.batch.version>
+    </properties>
+
+    <artifactId>com.swookiee.demo.groovy</artifactId>
+    <packaging>bundle</packaging>
+
+    <name>Swookiee Demo Fizz Buzz Groovy</name>
+
+    <dependencies>
+        <!-- OSGi Dependencies-->
+        <dependency>
+            <groupId>org.osgi</groupId>
+            <artifactId>org.osgi.core</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.osgi</groupId>
+            <artifactId>org.osgi.compendium</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.codehaus.groovy</groupId>
+            <artifactId>groovy-all</artifactId>
+        </dependency>
+
+        <!-- Annotation processor to generate Declarative Service XMLs from
+        @Component (org.osgi.service.component.annotations.Component) annotations -->
+        <dependency>
+            <groupId>org.apache.felix</groupId>
+            <artifactId>org.apache.felix.scr.ds-annotations</artifactId>
+        </dependency>
+
+        <!-- REST -->
+        <dependency>
+            <groupId>com.eclipsesource.jaxrs</groupId>
+            <artifactId>publisher</artifactId>
+        </dependency>
+
+        <!-- Some dependencies which will help, remember, a lot of it will
+        be provided via swookiee -->
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+        </dependency>
+
+        <!-- Test dependencies, some ppl. do that -->
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.hamcrest</groupId>
+            <artifactId>hamcrest-all</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-all</artifactId>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <!-- Felix plugin to generate MAINIFEST.MF -->
+            <plugin>
+                <groupId>org.apache.felix</groupId>
+                <artifactId>maven-bundle-plugin</artifactId>
+                <extensions>true</extensions>
+                <configuration>
+                    <manifestLocation>META-INF</manifestLocation>
+                    <instructions>
+                        <Export-Package>${osgi.export}</Export-Package>
+                        <Import-Package>${osgi.import}</Import-Package>
+                        <!-- Make sure Declarative Service XML files are
+                        registered and used from ${basedir}/OSGI-INF -->
+                        <Service-Component>OSGI-INF/*.xml</Service-Component>
+                        <Include-Resource>OSGI-INF=${basedir}/OSGI-INF</Include-Resource>
+                    </instructions>
+                </configuration>
+            </plugin>
+
+            <!-- Processes DS annotations and produces OSGI-INF/*.xml files -->
+            <plugin>
+                <groupId>org.apache.felix</groupId>
+                <artifactId>maven-scr-plugin</artifactId>
+            </plugin>
+
+            <!-- -->
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>build-helper-maven-plugin</artifactId>
+                <version>${build.helper.maven.plugin.version}</version>
+                <executions>
+                    <execution>
+                        <id>add-source</id>
+                        <phase>generate-sources</phase>
+                        <goals>
+                            <goal>add-source</goal>
+                        </goals>
+                        <configuration>
+                            <sources>
+                                <source>src/main/groovy</source>
+                            </sources>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.1</version>
+                <configuration>
+                    <compilerId>groovy-eclipse-compiler</compilerId>
+                    <source>1.7</source>
+                    <target>1.7</target>
+                </configuration>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>compile</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <dependencies>
+                    <dependency>
+                        <groupId>org.codehaus.groovy</groupId>
+                        <artifactId>groovy-eclipse-compiler</artifactId>
+                        <version>${groovy.eclipse.compiler.version}</version>
+                    </dependency>
+                    <dependency>
+                        <groupId>org.codehaus.groovy</groupId>
+                        <artifactId>groovy-eclipse-batch</artifactId>
+                        <version>${groovy.eclipse.batch.version}</version>
+                    </dependency>
+                </dependencies>
+            </plugin>
+
+        </plugins>
+    </build>
+</project>
