@@ -5,6 +5,7 @@ import java.util.ArrayList
 import java.util.List
 import javax.ws.rs.Path
 import javax.ws.rs.WebApplicationException
+import javax.ws.rs.core.Response;
 import org.osgi.service.component.annotations.Component
 
 @Component
