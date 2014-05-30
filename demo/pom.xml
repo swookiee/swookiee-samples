@@ -28,6 +28,22 @@
             <artifactId>metrics-core</artifactId>
             <version>3.0.2</version>
         </dependency>
+        
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-core</artifactId>
+            <version>2.3.3</version>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-annotations</artifactId>
+            <version>2.3.3</version>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>2.3.3</version>
+        </dependency>
 
         <!-- Annotation processor to generate Declarative Service XMLs from 
         @Component (org.osgi.service.component.annotations.Component) annotations -->

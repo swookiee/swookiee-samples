@@ -90,7 +90,7 @@
             <plugin>
                 <groupId>com.github.kongchen</groupId>
                 <artifactId>swagger-maven-plugin</artifactId>
-                <version>2.1</version>
+                <version>2.2</version>
                 <configuration>
                     <apiSources>
                         <apiSource>
@@ -114,7 +114,12 @@
                 </executions>
             </plugin>
 
-            <!-- swagger-maven-plugin version 2.1 has a bug, this would be the workaround... -->
+            <!-- 
+                swagger-maven-plugin version 2.1 had a bug, this was the workaround, 
+                but since I assume there will be other issues with the generated 
+                documentation, I will leave it here.
+                -->
+            <!--
             <plugin>
                 <groupId>com.google.code.maven-replacer-plugin</groupId>
                 <artifactId>replacer</artifactId>
@@ -136,7 +141,7 @@
                         </replacement>
                     </replacements>
                 </configuration>
-            </plugin>
+            </plugin> -->
 
             <!-- Processes DS annotations and produces OSGI-INF/*.xml files -->
             <plugin>

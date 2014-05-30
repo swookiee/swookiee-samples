@@ -31,7 +31,7 @@ class DemoCaller {
         random.nextInt(11000)
     }
     def getSleeptime(){
-        random.nextInt(1000)+1
+        random.nextInt(50)+1
     }
 
     def makeSomeTraffic(){

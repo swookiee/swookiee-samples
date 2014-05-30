@@ -1,18 +1,14 @@
 package com.swookiee.demo.impl;
 
-import com.codahale.metrics.MetricRegistry;
 import com.swookiee.demo.FizzBuzz;
 import java.util.ArrayList;
 import java.util.List;
 import javax.ws.rs.WebApplicationException;
 import javax.ws.rs.core.Response;
-import org.osgi.framework.ServiceRegistration;
 import org.osgi.service.component.annotations.Component;
 
 @Component
 public class FizzBuzzService implements FizzBuzz {
-
-    private ServiceRegistration<MetricRegistry> registeredMetricRegistry;
 
     @Override
     public List<String> fizzbuzz(final Integer limit) {
