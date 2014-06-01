@@ -8,7 +8,7 @@ import java.util.List;
 import javax.ws.rs.*;
 import static javax.ws.rs.core.MediaType.APPLICATION_JSON;
 
-@Api("FizzBuzz!!")
+@Api("FizzBuzz")
 @Path("/4/fizzbuzz")
 public interface FizzBuzz {
 

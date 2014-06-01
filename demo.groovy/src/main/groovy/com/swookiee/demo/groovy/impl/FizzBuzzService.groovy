@@ -14,11 +14,10 @@ public class FizzBuzzService implements FizzBuzzGroovy {
     @Override
     List<String> fizzbuzz(final Integer limit) {
         if (limit > 10000) {
-            throw new WebApplicationException("Naaa... to complicated!", Response.Status.BAD_REQUEST);
+           throw new WebApplicationException(Response.Status.BAD_REQUEST);
         }
 
         def result = []
-
         for (i in 1..limit) {
             result << ("${i%3?'':'Fizz'}${i%5?'':'Buzz'}" ?: i)
         }

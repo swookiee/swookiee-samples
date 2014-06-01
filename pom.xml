@@ -29,6 +29,7 @@
         <module>demo.groovy</module>
         <module>demo.metrics</module>
         <module>demo.swagger</module>
+        <module>demo.logging</module>
     </modules>
 
     <dependencyManagement>

@@ -6,7 +6,7 @@
 ## Api Version: 1.0.0-SNAPSHOT
 
 ## Resources
-### 0. /FizzBuzz!!
+### 0. /FizzBuzz
 #### Overview
 
 
