@@ -7,7 +7,7 @@ import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import static javax.ws.rs.core.MediaType.APPLICATION_JSON;
 
-@Path("/3/fizzbuzz")
+@Path("/4/fizzbuzz")
 public interface FizzBuzz {
 
     @GET

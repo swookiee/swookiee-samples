@@ -10,15 +10,15 @@
 #### Overview
 
 
-#### 0. `/4/fizzbuzz/{limit}`
+#### 0. `/3/fizzbuzz/{limit}`
 ##### 0..0 fizzbuzz
-**GET** `/4/fizzbuzz/{limit}`
+**GET** `/3/fizzbuzz/{limit}`
 
 FizzBuzz Calculus
 
 
 ###### URL
-    /services/4/fizzbuzz/{limit}
+    /services/3/fizzbuzz/{limit}
 ###### Parameters
 - path
 

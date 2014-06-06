@@ -9,7 +9,7 @@ import javax.ws.rs.*;
 import static javax.ws.rs.core.MediaType.APPLICATION_JSON;
 
 @Api("FizzBuzz")
-@Path("/4/fizzbuzz")
+@Path("/3/fizzbuzz")
 public interface FizzBuzz {
 
     @GET
