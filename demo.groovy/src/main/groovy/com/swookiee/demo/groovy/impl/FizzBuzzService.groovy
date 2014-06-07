@@ -9,12 +9,12 @@ import javax.ws.rs.core.Response;
 import org.osgi.service.component.annotations.Component
 
 @Component
-public class FizzBuzzService implements FizzBuzzGroovy {
+class FizzBuzzService implements FizzBuzzGroovy {
 
     @Override
     List<String> fizzbuzz(final Integer limit) {
         if (limit > 10000) {
-           throw new WebApplicationException(Response.Status.BAD_REQUEST);
+           throw new WebApplicationException(Response.Status.BAD_REQUEST)
         }
 
         def result = []

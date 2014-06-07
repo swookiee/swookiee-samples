@@ -39,7 +39,7 @@ public class FizzBuzzService implements FizzBuzz {
     @Override
     public List<String> fizzbuzz(final Integer limit) {
         if (limit > 10000) {
-            throw new WebApplicationException("Naaa... to complicated!", Response.Status.BAD_REQUEST);
+            throw new WebApplicationException(Response.Status.BAD_REQUEST);
         }
         List<String> result = new ArrayList<>();
 
