@@ -15,7 +15,7 @@ public interface FizzBuzz {
     @GET
     @Produces(APPLICATION_JSON)
     @Path("/{limit}")
-    @ApiOperation(value = "FizzBuzz Calculus", response = String.class, responseContainer = "List")
+    @ApiOperation(value = "FizzBuzz Calculus", responseContainer = "List", response = String.class)
     @ApiResponses(value = {
         @ApiResponse(code = 400, message = "If the limit input is greater than 10000")})
     List<String> fizzbuzz(@PathParam("limit") Integer limit);
