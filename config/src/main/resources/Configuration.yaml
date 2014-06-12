@@ -1,6 +1,6 @@
 graphiteReporterConfiguration:
   graphiteHost: localhost
   graphitePort: 2003
-  reportingIntervalInSeconds : 10
-  reportingEnabled: true
+  reportingIntervalInSeconds : 60
+  reportingEnabled: false
   reportingPrefix: "Demo"
