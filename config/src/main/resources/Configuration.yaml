@@ -4,3 +4,7 @@ graphiteReporterConfiguration:
   reportingIntervalInSeconds : 60
   reportingEnabled: false
   reportingPrefix: "Demo"
+
+adminUserConfiguration:
+  username: "admin"
+  password: "admin123"
