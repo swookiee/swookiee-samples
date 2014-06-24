@@ -7,7 +7,7 @@
                 <goal>install</goal>
             </goals>
             <activatedProfiles>
-                <activatedProfile>deploy</activatedProfile>
+                <activatedProfile>bundle-deploy</activatedProfile>
             </activatedProfiles>
         </action>
     </actions>
