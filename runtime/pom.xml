@@ -5,7 +5,7 @@
     <parent>
         <groupId>com.swookiee</groupId>
         <artifactId>com.swookiee.runtime</artifactId>
-        <version>1.0.0-SNAPSHOT</version>
+        <version>0.0.14</version>
     </parent>
 
     <properties>
@@ -20,6 +20,10 @@
     <name>Swookiee Demo Runtime</name>
 
     <repositories>
+        <repository>
+            <id>ossrh-staging</id>
+            <url>https://oss.sonatype.org/content/repositories/staging/</url>
+        </repository>
         <repository>
             <id>sonatype-snapshot</id>
             <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
