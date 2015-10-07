@@ -100,7 +100,7 @@
                                 <title>Swookiee Swagger Demo</title>
                                 <version>${project.version}</version>
                             </info>
-                            <templatePath>${basedir}/apidocs/markdown.mustache</templatePath>
+                            <templatePath>${basedir}/apidocs/markdown.hbs</templatePath>
                             <outputPath>${basedir}/README.md</outputPath>
                             <swaggerDirectory>${project.build.directory}/swagger</swaggerDirectory>
                         </apiSource>
