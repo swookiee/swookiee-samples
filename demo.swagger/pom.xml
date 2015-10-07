@@ -28,7 +28,7 @@
             <artifactId>org.osgi.compendium</artifactId>
         </dependency>
         <dependency>
-            <groupId>com.wordnik</groupId>
+            <groupId>io.swagger</groupId>
             <artifactId>swagger-annotations</artifactId>
         </dependency>
         <!-- Annotation processor to generate Declarative Service XMLs from 
@@ -90,16 +90,18 @@
             <plugin>
                 <groupId>com.github.kongchen</groupId>
                 <artifactId>swagger-maven-plugin</artifactId>
-                <version>2.2</version>
+                <version>3.1.0</version>
                 <configuration>
                     <apiSources>
                         <apiSource>
                             <locations>${swagger.scan.packages}</locations>
-                            <apiVersion>${project.version}</apiVersion>
                             <basePath>/services</basePath>
-                            <outputTemplate>${basedir}/apidocs/markdown.mustache</outputTemplate>
+                            <info>
+                                <title>Swookiee Swagger Demo</title>
+                                <version>${project.version}</version>
+                            </info>
+                            <templatePath>${basedir}/apidocs/markdown.hbs</templatePath>
                             <outputPath>${basedir}/README.md</outputPath>
-                            <mustacheFileRoot>${basedir}/apidocs/</mustacheFileRoot>
                             <swaggerDirectory>${project.build.directory}/swagger</swaggerDirectory>
                         </apiSource>
                     </apiSources>

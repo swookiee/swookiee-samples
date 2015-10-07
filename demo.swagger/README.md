@@ -1,59 +1,110 @@
-#API Document
+#Swookiee Swagger Demo
 
 
-## BasePath: /services
-
-## Api Version: 1.0.0-SNAPSHOT
-
-## Resources
-### 0. /FizzBuzz
-#### Overview
+##  | :///services
 
 
-#### 0. `/3/fizzbuzz/{limit}`
-##### 0..0 fizzbuzz
-**GET** `/3/fizzbuzz/{limit}`
-
-FizzBuzz Calculus
 
 
-###### URL
-    /services/3/fizzbuzz/{limit}
-###### Parameters
-- path
-
-    <table border="1">
-        <tr>
-            <th>Parameter</th>
-            <th>Required</th>
-            <th>Description</th>
-            <th>Data Type</th>
-        </tr>
-        <tr>
-            <th>limit</th>
-            <td>true</td>
-            <td></td>
-            <td>int</td>
-        </tr>
-    </table>
-
-###### Response
-[List[string]](#)
 
 
-###### Errors
+**Version** 1.0.0-SNAPSHOT
+
+[**Terms of Service**]()
+
+
+
+
+
+
+
+
+
+
+
+
+# APIs
+
+
+## /3/fizzbuzz/{limit}
+
+
+### GET
+
+<a id="fizzbuzz">FizzBuzz Calculus</a>
+
+
+
+
+
+
+
+
+
+#### Request
+
+
+
+##### Parameters
+
 <table border="1">
     <tr>
-        <th>Status Code</th>
-        <th>Reason</th>
+        <th>Name</th>
+        <th>Located in</th>
+        <th>Required</th>
+        <th>Description</th>
+        <th>Default</th>
+        <th>Schema</th>
     </tr>
-        <tr>
-            <td>400</td>
-            <td>If the limit input is greater than 10000</td>
-        </tr>
+
+
+
+<tr>
+    <th>limit</th>
+    <td>path</td>
+    <td>yes</td>
+    <td></td>
+    <td> - </td>
+
+    
+            <td>integer (int32)</td>
+    
+
+</tr>
+
+
 </table>
 
 
-- - -
 
-## Data Types
+#### Response
+
+**Content-Type: ** application/json
+
+
+| Status Code | Reason      | Response Model |
+|-------------|-------------|----------------|
+| 200    | successful operation | Array[<a href=""></a>]|
+| 400    | If the limit input is greater than 10000 |  - |
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# Definitions
+
+
