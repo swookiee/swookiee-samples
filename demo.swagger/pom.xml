@@ -74,18 +74,6 @@
             <plugin>
                 <groupId>org.apache.felix</groupId>
                 <artifactId>maven-bundle-plugin</artifactId>
-                <extensions>true</extensions>
-                <configuration>
-                    <manifestLocation>META-INF</manifestLocation>
-                    <instructions>
-                        <Export-Package>${osgi.export}</Export-Package>
-                        <Import-Package>${osgi.import}</Import-Package>
-                        <Include-Resource>swagger=${project.build.directory}/swagger,OSGI-INF=${basedir}/OSGI-INF</Include-Resource>
-                        <Service-Component>OSGI-INF/*.xml</Service-Component>
-                        <X-Swagger-Documentation>/swagger</X-Swagger-Documentation>
-                        <Bundle-ClassPath>.,swagger/</Bundle-ClassPath>
-                    </instructions>
-                </configuration>
             </plugin>
             <plugin>
                 <groupId>com.github.kongchen</groupId>
@@ -115,35 +103,6 @@
                     </execution>
                 </executions>
             </plugin>
-
-            <!-- 
-                swagger-maven-plugin version 2.1 had a bug, this was the workaround, 
-                but since I assume there will be other issues with the generated 
-                documentation, I will leave it here.
-                -->
-            <!--
-            <plugin>
-                <groupId>com.google.code.maven-replacer-plugin</groupId>
-                <artifactId>replacer</artifactId>
-                <version>1.5.3</version>
-                <executions>
-                    <execution>
-                        <phase>prepare-package</phase>
-                        <goals>
-                            <goal>replace</goal>
-                        </goals>
-                    </execution>
-                </executions>
-                <configuration>
-                    <file>${project.build.directory}/swagger/service.json</file>
-                    <replacements>
-                        <replacement>
-                            <token>,\n  "basePath" : "/services"</token>
-                            <value></value>
-                        </replacement>
-                    </replacements>
-                </configuration>
-            </plugin> -->
 
             <!-- Processes DS annotations and produces OSGI-INF/*.xml files -->
             <plugin>

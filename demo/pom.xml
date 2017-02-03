@@ -23,11 +23,6 @@
             <groupId>org.osgi</groupId>
             <artifactId>org.osgi.compendium</artifactId>
         </dependency>
-        <dependency>
-            <groupId>com.codahale.metrics</groupId>
-            <artifactId>metrics-core</artifactId>
-            <version>3.0.2</version>
-        </dependency>
         
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
@@ -87,17 +82,6 @@
                 <groupId>org.apache.felix</groupId>
                 <artifactId>maven-bundle-plugin</artifactId>
                 <extensions>true</extensions>
-                <configuration>
-                    <manifestLocation>META-INF</manifestLocation>
-                    <instructions>
-                        <Export-Package>${osgi.export}</Export-Package>
-                        <Import-Package>${osgi.import}</Import-Package>
-                        <!-- Make sure Declarative Service XML files are 
-                        registered and used from ${basedir}/OSGI-INF -->
-                        <Service-Component>OSGI-INF/*.xml</Service-Component>
-                        <Include-Resource>OSGI-INF=${basedir}/OSGI-INF</Include-Resource>
-                    </instructions>
-                </configuration>
             </plugin>
 
             <!-- Processes DS annotations and produces OSGI-INF/*.xml files -->

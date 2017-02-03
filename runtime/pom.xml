@@ -5,7 +5,7 @@
     <parent>
         <groupId>com.swookiee</groupId>
         <artifactId>com.swookiee.runtime</artifactId>
-        <version>0.0.14</version>
+        <version>0.1.2</version>
     </parent>
 
     <properties>
@@ -21,17 +21,13 @@
 
     <repositories>
         <repository>
-            <id>ossrh-staging</id>
+            <id>sonatype-staging</id>
             <url>https://oss.sonatype.org/content/repositories/staging/</url>
-        </repository>
-        <repository>
-            <id>sonatype-snapshot</id>
-            <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
             <releases>
-                <enabled>false</enabled>
+                <enabled>true</enabled>
             </releases>
             <snapshots>
-                <enabled>true</enabled>
+                <enabled>false</enabled>
             </snapshots>
         </repository>
     </repositories>
@@ -41,6 +37,11 @@
             <groupId>org.codehaus.groovy</groupId>
             <artifactId>groovy-all</artifactId>
             <version>2.3.3</version>
+        </dependency>
+        <dependency>
+            <groupId>org.python</groupId>
+            <artifactId>jython</artifactId>
+            <version>2.7.1b3</version>
         </dependency>
         <dependency>
             <groupId>${project.groupId}</groupId>
@@ -63,15 +64,10 @@
                         </goals>
                         <configuration>
                             <artifactItems>
-                                <artifactItem>
+                                <dependency>
                                     <groupId>org.codehaus.groovy</groupId>
                                     <artifactId>groovy-all</artifactId>
-                                </artifactItem>
-                                <artifactItem>
-                                    <groupId>${project.groupId}</groupId>
-                                    <artifactId>com.swookiee.demo.config</artifactId>
-                                    <version>${demo.version}</version>
-                                </artifactItem>
+                                </dependency>
                             </artifactItems>
                             <outputDirectory>${project.build.directory}/dropins</outputDirectory>
                             <overWriteSnapshots>true</overWriteSnapshots>
